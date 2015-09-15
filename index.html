@@ -5,11 +5,31 @@
     <link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
   </head>
   <body>
+    <form action="">
+      <h2>Contact Us</h2>
+      <label>
+        Name<input type="text" placeholder="Sally Smith">
+      </label>
+      <div class="error-box"></div>
+      <label>
+        Email<input type="text" placeholder="ssmith@gmail.com">
+      </label>
+      <div class="error-box"></div>
+      <label>
+        Website<input type="text" placeholder="http://mssmith.net">
+      </label>
+      <div class="error-box"></div>
+      <label>
+        Message<textarea placeholder="A friendly message..."></textarea>
+      </label>
+      <div class="error-box"></div>
+      <button class="btn-black" id="submit-button">Submit</button>
+    </form>
 
 
-
-
+    <script src="/node_modules/lodash/index.js"></script>
     <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/main.js"></script>
+
   </body>
 </html>

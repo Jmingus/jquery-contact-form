@@ -1,1 +1,36 @@
 @import 'kube';
+
+body{
+  background: #201D29;
+  padding: 3em 5em;
+}
+
+form{
+  background: white;
+  padding: 2em;
+  margin: 0 auto;
+  max-width: 50em;
+  textarea{
+    height: 13em;
+  }
+  input{
+    display: block;
+    width: 100%;
+  }
+  .error-box{
+    display: none;
+  }
+  button{
+    margin-top: 2em;
+    border: 0;
+    height: 3em;
+    width: 6em;
+    font-size: 20px;
+  }
+}
+
+@media screen and(min-width: 56.375em){
+#submit-button{
+    background: #88C470;
+  }
+}
