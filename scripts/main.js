@@ -5,6 +5,7 @@ $(document).ready(function(){
   var $inputs = $('input')
   var $messageBox = $('textarea')
   var $errorBox = $('.error-box')
+  var $submitButton = $('#submit-button')
 
 
   function errors(){
@@ -21,18 +22,32 @@ $(document).ready(function(){
       $($errorBox[3]).css({display: 'block', color: 'red'});
     }
     if(!_.includes($inputs[1], '@')){
-      if(!_.includes($errorBox[1], '<div>')){
+      if(!_.includes($errorBox[1].innerHTML, '<div>')){
         $($errorBox[1]).append('<div>Email must contain a @ symbol</div>')
+        $($errorBox[1]).css({display: 'block', color: 'red'});
+        $($inputs[1]).css('borderColor', 'red');
+      }else{
+        $($errorBox[1]).text('')
+        $($inputs[1]).css('borderColor', '#cccccc')
       }
-      $($errorBox[1]).css({display: 'block', color: 'red'});
-      $($inputs[1]).css('borderColor', 'red');
+
+    }
+    if(!_.startsWith('http://', $inputs[2])) {
+      if(!_.includes($errorBox[2].innerHTML, '<div>')){
+        $($errorBox[2]).append('<div>Website must start with http://</div>')
+        $($errorBox[2]).css({display: 'block', color: 'red'});
+      $($inputs[2]).css('borderColor', 'red');
+      }else {
+        $($errorBox[2]).text('')
+        $($inputs[2]).css('borderColor', '#cccccc')
+      }
+
     }
   }
 
   $form.on('submit', function(e){
     e.preventDefault()
-    console.log($($errorBox[1]))
+    console.log(_.startsWith('http://', $inputs[2]))
     errors()
   });
-
 });

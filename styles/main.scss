@@ -27,10 +27,11 @@ form{
     width: 6em;
     font-size: 20px;
   }
-}
-
-@media screen and(min-width: 56.375em){
-#submit-button{
+  #submit-button{
+    transition: background .5s ease-out;
+  }
+  #submit-button:hover{
     background: #88C470;
+    color: white;
   }
 }

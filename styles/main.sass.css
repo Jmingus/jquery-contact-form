@@ -3610,7 +3610,8 @@ form {
     height: 3em;
     width: 6em;
     font-size: 20px; }
-
-@media screen and (min-width: 56.375em) {
-  #submit-button {
-    background: #88C470; } }
+  form #submit-button {
+    transition: background 0.5s ease-out; }
+  form #submit-button:hover {
+    background: #88C470;
+    color: white; }
